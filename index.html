@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+
+<!--  start page first-->
+<div data-role="page" id="first">
+
+	<div data-role="header">		
+	<div data-role="navbar">
+		<ul>
+					<li><a href="#first">Donny's Pizza</a></li>
+					<li><a class="current" href="#first">Home</a></li>
+					<li><a href="#second">Pizza Gallery</a></li>
+					<li><a href="#third">Build Your Own</a></li>
+					
+				<li><a href="order.html">Order</a></li>
+		</ul>
+	</div><!-- /navbar -->
+	</div><!-- /footer -->
+
+	<div data-role="content">	
+    <section>
+      <h2 style="text-align:center">Donny's Pizza</h2>
+      <article>
+        <video controls="controls" preload="auto" autoplay muted>
+          <source src="misc/commercial.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <section>
+        <p>
+            Much has happened since our dad, Donald Stolfe, traded his prized 1962 Oldsmobile Starfire to open the first Donnie’s in a small storefront on the south side of Chicago.
+
+            We no longer play records, we download tunes. We chat online, not over the neighbor’s fence.
+
+            The Donnie’s family has undergone changes as well! We have opened new restaurants and expanded into frozen foods nationwide.
+
+            There are some things, however, that have not changed. We are still family owned. We are still obsessed with quality and service. And Dad still has the final word! We hope you will all be customers for 50 more years!
+        </p>
+        </section>
+      </article>
+      <a href="#top" style="float:right">Top</a>
+    </section>    
+  </div>
+  </div>
+  <!-- end of page first -->
+     <div data-role="page" id="second">
+
+	<div data-role="header">		
+	<div data-role="navbar">
+		<ul>
+					<li><a href="#first">Donny's Pizza</a></li>
+					<li><a class="current" href="#first">Home</a></li>
+					<li><a href="#second">Pizza Gallery</a></li>
+					<li><a href="#third">Build Your Own</a></li>
+					
+				<li><a href="order.html">Order</a></li>
+		</ul>
+	</div><!-- /navbar -->
+	</div><!-- /footer -->
+
+  <div date-role="content">
+  
+      <h2>Our Specialties</h2>
+      <article>
+        <p>
+        Donny’s is constantly making headlines, both in Chicago and nationally. The brand garners frequent media coverage and continuously tops “Best Pizza” lists and dining guides. Donny’s has been acclaimed “Chicago’s Best Pizza” by NBC, CBS Chicago, New York Times, Chicago Magazine, Chicago Tribune, Chicago Eater, Home & Garden Magazine, Concierge Preferred and more! Find our Specialties below.
+        </p>
+      </article>
+      <hr />
+      <article>
+          <head>
+              <h2 id="deepdish">Chicago Deep Dish Pizza</h2>
+          </head>
+         <section>
+            <p>
+           A crispy short dough crust, topped with cheese first, then crushed tomatoes.
+            </p>
+            <figure>
+            <img src="images/deepdish.jpg" alt="Chicago Deep Dish Pizza" />
+            <figcaption>Chicago's Deep Dish Pizza</figcaption>
+            </figure>
+            </section>
+      </article>
+    <hr />
+     <article>
+          <head>
+              <h2 id="bbqchicken">BBQ Chicken Pizza</h2>
+          </head>
+         <section>
+            <p>
+            Made with tender cuts of chicken breast, barbecue sauce, onions and parsley with provolone, mozzarella and cheddar cheeses on a cheesy cheddar crust.
+            </p>
+            <figure>
+            <img src="images/bbqchicken.jpg" alt="BBQ Chicken Pizza" />
+            <figcaption>BBQ Chicken Pizza</figcaption>
+            </figure>
+            </section>
+      </article>
+    <hr />    
+      <a href="#top" style="float:right">Top</a>
+  </div>
+  </div>
+  
+  <!--  start page third-->
+	
+ <div data-role="page" id="third">
+
+	<div data-role="footer">		
+	<div data-role="navbar">
+		<ul>
+				<li><a href="#first">Donny's Pizza</a></li>
+				<li><a class="current" href="#first">Home</a></li>
+				<li><a href="#second">Pizza Gallery</a></li>
+				<li><a href="byo.html">Build Your Own</a></li>
+				<li><a href="order.html">Order</a></li>
+		</ul>
+	</div><!-- /navbar -->
+	</div><!-- /footer -->
+	<div data-role="content">	
+        <header>
+            <h2> Build Your Own Pizza</h2>
+        </header>
+        <section>
+            <form id="orderPizzaForm">
+			<fieldset>
+                <div data-mini="true" style="width:300px;height:150px;" >
+				
+				     
+			<label for="select-native-17">Pizza Size</label>
+
+				    <select name="select-native-17" id="select-native-17" >
+				 	
+				        <option value="1">Small</option>
+				        <option value="2">Medium</option>
+				        <option value="3">Large</option>
+				        
+				    </select>
+				</div>
+				</fieldset>
+				
+				
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>Crust Size:</legend>
+						<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="thin crust" checked="checked">
+						<label for="radio-choice-h-2a">Thin Crust</label>
+						<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="regular crust">
+						<label for="radio-choice-h-2b">Regular Crust</label>
+						
+					</fieldset>
+                <fieldset>
+				
+				
+				
+				<fieldset data-role="controlgroup" data-mini="true">
+					<legend>cheese :</legend>
+					<input type="radio" name="radio-choice-v-6" id="radio-choice-v-6a" value="Mozarella" checked="checked">
+					<label for="radio-choice-v-6a">Mozarella</label>
+					<input type="radio" name="radio-choice-v-6" id="radio-choice-v-6b" value="Feta">
+					<label for="radio-choice-v-6b">Feta</label>
+					<input type="radio" name="radio-choice-v-6" id="radio-choice-v-6c" value="Reduced Fat">
+					<label for="radio-choice-v-6c">Reduced Fat</label>
+				</fieldset>
+						
+				
+                <fieldset data-role="controlgroup">
+                    <legend>Choose your toppings</legend>
+
+                    <div>
+                        <input class="messageCheckbox" type="checkbox" id="anchovies" name="toppings" value="anchovies">
+                        <label for="anchovies">Anchovies</label>
+                    </div>
+                    <div>
+                        <input class="messageCheckbox" type="checkbox" id="bacon" name="toppings" value="bacon">
+                        <label for="bacon">Bacon</label>
+                    </div>
+                    <div>
+                        <input class="messageCheckbox" type="checkbox" id="onions" name="toppings" value="onions">
+                        <label for="onions">Onions</label>
+                    </div>
+                    <div>
+                        <input class="messageCheckbox"  type="checkbox" id="garlic" name="toppings" value="garlic">
+                        <label for="garlic">Garlic</label>
+                    </div>
+                    <div>
+                        <input class="messageCheckbox"  type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+                        <label for="mushrooms">Mushrooms</label>
+                    </div>
+                    <div>
+                        <input class="messageCheckbox"  type="checkbox" id="peppers" name="toppings" value="peppers">
+                        <label for="peppers">Peppers</label>
+                    </div>
+                </fieldset>
+                <div style="margin-top:40px">
+                <input id="submitButton" type="button" class="button" value="Submit" />
+                </div>
+            </form>
+        </section> 
+        </div>
+			<script>
+
+            window.onload=function(){
+                document.getElementById("submitButton").addEventListener('click', function () {
+
+                 sessionStorage.clear();   
+                //getting pizza size
+                var pizzaSize = document.getElementById('select-native-17').value;
+                 sessionStorage.setItem('pizzasize',pizzaSize);
+
+                //getting crust size
+                if (document.getElementById('radio-choice-h-2a').checked) {
+                    var crust = document.getElementById('radio-choice-h-2a').value;
+                     sessionStorage.setItem('crustsize',crust);
+                }
+                else {
+                    crust = document.getElementById('radio-choice-h-2b').value;
+                    sessionStorage.setItem('crustsize',crust);
+                    }
+
+                //getting cheese    
+                    if (document.getElementById('radio-choice-v-6a').checked) {
+                    var cheese = document.getElementById('radio-choice-v-6a').value;
+                    sessionStorage.setItem('cheese',cheese);
+                }
+                else if(document.getElementById('radio-choice-v-6b').checked) {
+                    cheese = document.getElementById('radio-choice-v-6b').value;
+                    sessionStorage.setItem('cheese',cheese);
+                }
+                else{
+                    cheese = document.getElementById('radio-choice-v-6c').value;
+                    sessionStorage.setItem('cheese',cheese);
+                }
+
+                //getting toppings
+                var checkedValue = [];
+                    var inputElements = document.getElementsByClassName('messageCheckbox');
+                    for (var i = 0; inputElements[i]; i++) {
+                        if (inputElements[i].checked) {
+                            checkedValue.push (inputElements[i].value);
+                        }
+                }
+                sessionStorage.setItem('toppings',checkedValue);
+
+                if(sessionStorage){
+                    window.location='./order.html';
+                }
+
+             });
+            }
+        </script>
+</div>
+
+
+	
+	
+
+
+
+  
+</body>
+</html>

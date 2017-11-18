@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR6zvb9mcg03pwLNCLqWxZEDUzUilKt8s&callback=initMap"
+    async defer></script>
+    
+</head>
+
+
+<body>
+    <div data-role="header">		
+	<div data-role="navbar">
+		<ul>
+					<li><a href="#first">Donny's Pizza</a></li>
+					<li><a class="current" href="#first">Home</a></li>
+					<li><a href="#second">Pizza Gallery</a></li>
+					<li><a href="#third">Build Your Own</a></li>
+					
+				<li><a href="order.html">Order</a></li>
+		</ul>
+	</div><!-- /navbar -->
+	</div><!-- /footer -->
+    
+
+    <div id="userDetails">
+        Good choice!
+        <p id="details"></p>
+       <form>
+     <label for="text-1">Enter Your Name:</label>
+     <input type="text" name="text-1" id="text-1" value="">
+     <label for="textarea-1">Address:</label>
+    <textarea name="textarea-1" id="textarea-1"></textarea>
+	 <label for="email-2">Email:</label>
+    <input type="email" data-clear-btn="true" name="email-2" id="email-2" value="">
+	<label for="tel-2">Phone:</label>
+     <input type="tel" data-clear-btn="true" name="tel-2" id="tel-2" value="">
+	 
+</form>
+        
+       
+        
+        <div id="btngroup">
+        <input id="order" type="button" value="Order"/> 
+        <input onclick="clearContents()"type="button" value="Cancel"/>
+        </div>
+     
+ </div>
+<div id="maps">
+<p id="demo">Locate me using Google Maps</p>
+
+<button onclick="getLocation()">Locate Me!</button>
+
+<div id="mapholder" ></div>
+</div>
+    <script>
+    window.onload=function(){
+       
+        var size=sessionStorage.getItem('pizzasize');
+        var crust=sessionStorage.getItem('crustsize');
+        var cheese=sessionStorage.getItem('cheese');
+        var toppings = sessionStorage.getItem('toppings');
+
+        if(toppings){
+      document.getElementById('details').innerHTML="You've selected "+size+" pizza with "+crust+" and " +cheese+" cheese with "+toppings+" as toppings! Now please enter delivery details - ";
+        }
+    else{
+        document.getElementById('details').innerHTML="You've selected "+size+" pizza with "+crust+" and " +cheese+" cheese with no toppings! Now please enter delivery details - ";
+    }
+
+
+      document.getElementById('order').addEventListener('click',function(){
+          alert('Thank you! Your order will be be delivered within 30 minutes');
+      })
+
+
+    }
+	
+	
+	function clearContents() {
+  document.getElementById('text-1').value = '';
+  document.getElementById('textarea-1').value = '';
+  document.getElementById('email-2').value = '';
+  document.getElementById('tel-2').value = '';
+}
+	
+    //maps
+    var x = document.getElementById("demo");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    latlon = new google.maps.LatLng(lat, lon)
+    mapholder = document.getElementById('mapholder')
+    mapholder.style.height = '250px';
+    mapholder.style.width = '100%';
+
+    var myOptions = {
+    center:latlon,zoom:14,
+    mapTypeId:google.maps.MapTypeId.ROADMAP,
+    mapTypeControl:false,
+    navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+    }
+    
+    var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+    var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+    
+    </script>
+</body>
+
+</html>
